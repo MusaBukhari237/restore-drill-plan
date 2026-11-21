@@ -1,9 +1,9 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-app="restore-drill-plan">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self'; connect-src 'none'; base-uri 'none'; form-action 'none'; object-src 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; font-src 'self'; img-src 'self'; connect-src 'none'; base-uri 'none'; form-action 'none'; object-src 'none'">
 <title>Plan a PostgreSQL restore drill | Restore Drill Plan</title>
 <meta name="description" content="Generate a Docker argument plan to restore a custom-format backup into a disposable PostgreSQL container.">
 <link rel="canonical" href="https://musabukhari237.github.io/restore-drill-plan/">
@@ -17,18 +17,22 @@
 <link rel="icon" href="logo.svg" type="image/svg+xml">
 <link rel="stylesheet" href="app.css">
 <script src="app.mjs" type="module"></script>
+  <script type="module" src="experience.mjs"></script>
+  <script type="module" src="experience.mjs"></script>
 </head>
 <body>
-<header><a class="brand" href="./"><img src="logo.svg" alt="">Restore Drill Plan</a><a class="repo" href="https://github.com/MusaBukhari237/restore-drill-plan">Source on GitHub</a></header>
+<a class="skip" href="#workspace">Skip to workspace</a>
+<header><a class="brand" href="./"><img src="logo.svg" alt="">Restore Drill Plan</a><nav aria-label="Main"><a href="#guide">How to use</a><a class="repo" href="https://github.com/MusaBukhari237/restore-drill-plan">GitHub ↗</a></nav></header>
 <main>
-<section class="hero"><h1>Plan a PostgreSQL restore drill</h1><p>Generate a Docker argument plan to restore a custom-format backup into a disposable PostgreSQL container.</p></section>
-<div class="workspace">
-<section class="panel input" aria-labelledby="settings"><h2 id="settings">Settings</h2>
+<section class="masthead"><div class="intro"><p class="category">Recovery planning</p><h1>Practice the way back.</h1><p class="description">Prepare a PostgreSQL restore rehearsal in a disposable container. Review the commands before running them.</p></div><figure class="scene diagram"><img src="scene.svg" alt="Recovery planning process illustration" width="440" height="260"></figure></section>
+<div class="workspace" id="workspace">
+<section class="panel input" aria-labelledby="settings"><h2 id="settings">Backup & environment</h2>
 <div class="fields"><label class="wide">Custom-format backup filename<input id="archive" placeholder="example.dump" maxlength="87"></label><label>PostgreSQL version<select id="version"><option value="18">18</option><option value="17">17</option><option value="16">16</option><option value="15">15</option></select></label><label class="wide">Disposable container name<input id="container" value="restore-drill-demo" maxlength="38"></label></div><div class="actions"><button type="button" id="run">Generate plan</button><button type="button" class="quiet" id="example">Load example</button></div><p class="note">Review each command before running it. Use a trusted backup and a fresh container name. The app generates arguments only.</p>
 </section>
-<section class="panel output" aria-labelledby="output"><h2 id="output">Result</h2><div class="result" id="result" aria-live="polite">Load the example or enter your own input.</div></section>
+<section class="panel output" aria-labelledby="output" id="output-panel"><h2 id="output" tabindex="-1">Restore playbook</h2><p class="result-status" id="result-status" aria-live="polite">Ready when you are</p><div class="result" id="result" aria-live="polite">Load the example or enter your own input.</div></section>
 </div>
+<details class="guide" id="guide"><summary>How to use Restore Drill Plan</summary><ol><li>Choose a backup format, path, and supported PostgreSQL major.</li><li>Use a fresh disposable container name.</li><li>Generate and review the plan before executing commands yourself.</li></ol></details>
 </main>
-<footer>Open-source browser tool · <a href="https://github.com/MusaBukhari237/restore-drill-plan/blob/HEAD/LICENSE">MIT license</a></footer>
+<footer><span>Restore Drill Plan · <a href="https://github.com/MusaBukhari237/restore-drill-plan/blob/main/LICENSE">MIT licensed</a></span><span class="credits"><a href="https://www.leadceleris.com/">LeadCeleris</a><a href="https://www.aifficiento.biz/">AIFFICIENTO</a></span></footer>
 </body>
 </html>
